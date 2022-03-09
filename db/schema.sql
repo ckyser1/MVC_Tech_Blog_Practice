@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS refugee_db;
+CREATE DATABASE refugee_db;
