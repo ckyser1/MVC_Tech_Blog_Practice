@@ -21,6 +21,8 @@ AFTER logging in:
             Current Location,
             Who I am trying to find,
             My current health status
-    I am able to delete my post and indicate that family members have been found. 
+
+I am able to delete my post and indicate that family members have been found. 
 
 WHEN I view a post I am able to comment or reply to that post. 
+
