@@ -21,7 +21,8 @@ Comment.init(
         made_by: {
             type: DataTypes.STRING
         },
-
+    },
+    {
         sequelize,
         timestamps: true,
         freezeTableName: true,
