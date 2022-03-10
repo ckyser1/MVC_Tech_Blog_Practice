@@ -1,0 +1,27 @@
+:root {
+  --primaryColor: #f9fafb;
+  --secondaryColor: #202121;
+  --bodyCopyFontStyling: ;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  background-color: var(--primaryColor);
+}
+
+header {
+  width: calc(100% - 100px);
+  height: 60px;
+  padding: 20px 50px;
+  background-color: var(--primaryColor);
+}
+
+header > img {
+  height: 60px;
+}
