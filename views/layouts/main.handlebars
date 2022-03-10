@@ -9,18 +9,19 @@
 </head>
 <body>
     <header>
-        <img src="" alt="">
+        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect" style="width: 150px; height:auto;">
         <nav>
             <section id="navigation-links">
                 <a href="/">Home</a>
-                <a href="/posts/">Postings</a>
-                <a href="/families/">Families</a>
+                <a href="/posts">Postings</a>
+                <a href="/families">Families</a>
             </section>
             <section>
                 {{#if logged_in}}
-                <button class="nav-btn">Profile</button>
+                <a href="/profile" class="nav-btn">Profile</a>
+                <a href="/logout" class="nav-btn">LogOut</a>
                 {{else}}
-                <button class="nav-btn">Log In</button>
+                <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
                 <input type="text" data-searchBar="search-context" placeholder="Search Here.">
                 <button type="submit" data-searchBar="search-submit"></button>
