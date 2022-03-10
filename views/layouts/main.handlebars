@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+        <nav>
+            <section id="navigation-links">
+                <a href="/">Home</a>
+                <a href="/posts/">Postings</a>
+                <a href="/families/">Families</a>
+            </section>
+            <section>
+                {{#if logged_in}}
+                <button class="nav-btn">Profile</button>
+                {{else}}
+                <button class="nav-btn">Log In</button>
+                {{/if}}
+                <input type="text" data-searchBar="search-context" placeholder="Search Here.">
+                <button type="submit" data-searchBar="search-submit"></button>
+            </section>
+        </nav>
+    </header>
+    <main>
+    {{{body}}}
+    </main>
+    <footer>
+        <h6>This project was created and developed by:</h6>
+        <ul>
+            <li><a href="http://github.com/aclelandx">Adam Cleland</a></li>
+            <li><a href="http://github.com/ckyser1">Cody Kyser</a></li>
+            <li><a href="http://github.com/nathanrusselldev">Nate Russell</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

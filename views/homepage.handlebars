@@ -1,0 +1,19 @@
+{{!-- Have this contain the background hero image along with text content for the landing page of the document. --}}
+<section id="hero-section">
+    <h1>
+        Inspirational Words
+    </h1>
+    <h2>
+        Inspirational quote - "dude quoted"
+    </h2>
+</section>
+{{!-- Have the most recent post that has been added to the application displayed here on the front page being rendered from the home --}}
+<section id="recent-posting">
+    {{{> recentPosting}}}
+</section>
+{{#if logged_in}}
+    <button class="homepage-btn">View More</button>
+    <button class="homepage-btn">Submit Response</button>
+{{else}}
+    <button>View More</button>
+{{/if}}
