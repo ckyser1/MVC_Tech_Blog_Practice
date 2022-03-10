@@ -22,7 +22,7 @@ User.init(
     allowNull: false
   },
 
-  late_name: {
+  last_name: {
     type: DataTypes.STRING,
     allowNull: true
   },

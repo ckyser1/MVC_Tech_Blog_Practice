@@ -1,0 +1,31 @@
+[
+    {
+      "first_name": "Nate",
+      "last_name": "Test",  
+      "email": "nate@hotmail.com",
+      "password": "password12345",
+      "age": "8",
+      "location": "Ukraine",
+      "health_status": "okay"
+    },
+   
+    {
+      "first_name": "Brandon",
+      "last_name": "Test",  
+      "email": "brandon@hotmail.com",
+      "password": "9876543",
+      "age": "75",
+      "location": "America",
+      "health_status": "injured"
+    },
+   
+    {
+      "first_name": "Sarah",
+      "last_name": "Test",  
+      "email": "sarah@hotmail.com",
+      "password": "abcdefg",
+      "age": "65",
+      "location": "Cambodia",
+      "health_status": "okay"
+    }
+]
