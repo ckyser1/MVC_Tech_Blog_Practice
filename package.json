@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.17.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "project-2-family_reconnect_board",
+  "description": "A CMS style blog site to publish articles, blog posts, and stories",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckyser1/Project-2-Family_Reconnect_Board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckyser1/Project-2-Family_Reconnect_Board/issues"
+  },
+  "homepage": "https://github.com/ckyser1/Project-2-Family_Reconnect_Board#readme"
+}
