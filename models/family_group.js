@@ -23,12 +23,13 @@ Family_group.init(
         family_members: {
             type: DataTypes.STRING
         },
-
+    },
+        {
         sequelize,
         timestamps: true,
         freezeTableName: true,
         modelname: 'family_group',
-
-});
+    
+    });
 
 module.exports = Family_group;

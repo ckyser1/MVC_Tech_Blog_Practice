@@ -45,7 +45,7 @@ User.init(
   },
 
   age: {
-    type: DataTpyes.STRING,
+    type: DataTypes.STRING,
     allowNull: true
   },
 
