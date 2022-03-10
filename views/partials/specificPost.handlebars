@@ -1,0 +1,14 @@
+<h4>{{{post.post_title}}}</h4>
+<p>
+    {{{post.createdAt}}} 
+    <br>
+    {{{post.author}}}
+</p>
+<hr>
+<figure id="posting-picture" style="background-image: url('{{post.img_url}}');" alt="{{post.img_alt}}">
+    {{!-- background image source will be given from the sql database. future development would allow the user to upload a custom picture for the posting. --}}
+</figure>
+<article id="posting-text-content">
+    {{{post.post_bio}}}
+</article>
+<hr>
