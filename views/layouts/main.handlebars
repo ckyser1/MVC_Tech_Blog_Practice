@@ -18,9 +18,9 @@
             </section>
             <section>
                 {{#if logged_in}}
-                <button class="nav-btn">Profile</button>
+                <a href="/profile" class="nav-btn">Profile</a>
                 {{else}}
-                <button class="nav-btn">Log In</button>
+                <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
                 <input type="text" data-searchBar="search-context" placeholder="Search Here.">
                 <button type="submit" data-searchBar="search-submit"></button>
