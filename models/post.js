@@ -26,7 +26,7 @@ Post.init(
             allowNull: true
         },
         author: {
-            type: database.types.STRING,
+            type: DataTypes.STRING,
             allowNull: true
 
         }
