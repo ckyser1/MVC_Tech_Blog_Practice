@@ -1,0 +1,8 @@
+<section id="comments-container">
+    {{#each comments as |comment|}}
+    <article class="individual-comment">
+        <h6>{{{comment.made_by}}} // {{{comment.createdAt}}}</h6>
+        <p>{{{comment.comment}}}</p>
+    </article>
+    {{/each}}
+</section>
