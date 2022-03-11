@@ -9,31 +9,36 @@
 <body>
 
     <form>
-    <div>
-    <h2 class="formHeadings">Contact Information:</h2>    
-
+    <section>
+    <h2 class="formHeadings">User Information:</h2>    
+        {{!--First Name --}}
         <label for="fname">First name:</label><br>
             <input type="text" id="formFName" name="fname"><br>
+        {{!-- Last Name --}}
         <label for="lname">Last name:</label><br>
             <input type="text" id="formLName" name="lname"><br>
+        {{!-- email --}}
         <label for="email">Email:</label><br>
             <input type="email" id="formEmail"><br>
-    </div>
+        {{!-- password --}}
+        <label for="password">Password:</label><br>
+            <input type="password" id="formPassword"><br>
+    </section>
 
-    <div>
+    <section>
     <h2 class="formHeadings">Status</h2>
 
-    <input type="radio" id="healthy" name="Health Status" value="healthy">
+    <input type="radio" id="healthRadio" name="Health Status" value="healthy">
         <label for="html">Healthy</label><br>
-    <input type="radio" id="sick" name="Health Status" value="sick">
+    <input type="radio" id="healthRadio" name="Health Status" value="sick">
         <label for="sick">Sick</label><br>
-    <input type="radio" id="injured" name="Health Status" value="injured">
+    <input type="radio" id="healthRadio" name="Health Status" value="injured">
         <label for="injured">Injured</label><br>
-       
-    </div>    
-    <div>
-    <h2 class="formHeadings">Bio</h2> 
+    </section>
+      
+    <section>
     <br>
+    <h2>Location:</h2>
     <select id="country" name="country">
         <option value="Afganistan">Afghanistan</option>
         <option value="Albania">Albania</option>
@@ -281,12 +286,13 @@
         <option value="Zaire">Zaire</option>
         <option value="Zambia">Zambia</option>
         <option value="Zimbabwe">Zimbabwe</option>
-     </select>
-     <br>
-    <textarea id="bio" rows="6" cols="50" name="bio">Enter information about yourself here...</textarea>
-    </div>
+    </select>
+    <br> 
+    <label for="password">Age:</label>
+            <input type="text" id="formAge">
     <br>
     <input type="submit" id="postFormSubmit" name="formSubmit" value="Submit">
+    </section>
 
     </form>
 

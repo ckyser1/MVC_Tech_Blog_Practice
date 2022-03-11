@@ -28,11 +28,10 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
-router.get(`/signUp`, (req, res) => {
+router.get(`/signup`, (req, res) => {
   res.render(`signupform`);
 });
 
