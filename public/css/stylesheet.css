@@ -21,6 +21,8 @@ body {
   overflow-x: hidden;
 }
 
+/* Stylization for the main.handlebars begins */
+
 /* Styling for the header section begins. */
 
 header {
@@ -58,6 +60,54 @@ header > nav a {
 
 /* Stylization for the header section ends. */
 
+/* Some simple widths attributes added to the main section of the page */
+
+main {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+/* Stylization for the footer section begins */
+
+footer {
+  width: 100%;
+  background-color: var(--primaryColor);
+}
+
+footer > h6 {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+  text-align: center;
+  padding: 25px 0px 0px 0px;
+  border-top: 1px solid var(--secondaryColor);
+}
+
+footer > ul {
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  max-width: 1440px;
+  text-align: center;
+}
+
+footer > ul > li {
+  display: inline-block;
+  margin: 0px 10px;
+  padding: 0px 0px 25px 0px;
+  font: var(--bodyCopyFontStyling);
+  color: var(--secondaryColor);
+}
+
+footer > ul > li > a {
+  color: var(--secondaryColor);
+}
+
+/* Stylization for the footer section ends */
+
+/* Stylization for the main.handlebars ends */
+
 /* Stylization for the homepage.handlebars render begins. */
 
 /* Hero section begins */
@@ -93,3 +143,6 @@ header > nav a {
 }
 
 /* Hero section ends. */
+
+/* most recent post section begins */
+/* most recent post section ends */
