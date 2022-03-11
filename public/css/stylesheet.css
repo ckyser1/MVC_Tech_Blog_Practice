@@ -270,3 +270,28 @@ footer > ul > li > a {
 }
 
 /* Stylization for the login.handlebars render ends. */
+
+/* Stylization for the newPost.handlebars begins */
+
+#new-post-container {
+  width: calc(100% - 150px);
+  max-width: 1440px;
+  margin: 0px auto;
+  padding: 100px 75px;
+}
+
+#new-post-container > h2 {
+  width: 100%;
+  text-align: left;
+  font: var(--subTitleFontStyling);
+  letter-spacing: 0.1em;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--ternaryColor);
+}
+
+#new-post-container > form {
+  width: 100%;
+  display: flex;
+  height: 400px;
+  flex-flow: column wrap;
+}

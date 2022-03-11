@@ -32,5 +32,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get(`/signUp`, (req, res) => {
+  res.render(`signupform`);
+});
+
+router.get(`/newPost`, (req, res) => {
+  res.render(`newPosting`);
+});
 
 module.exports = router;
