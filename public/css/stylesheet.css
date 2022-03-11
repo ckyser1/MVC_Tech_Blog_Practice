@@ -61,8 +61,8 @@ header > nav {
 header > nav a {
   color: var(--secondaryColor);
   text-decoration: none;
-  margin: 0px 5px;
-  padding: 10px 5px;
+  margin: 0px 10px;
+  padding: 5px 10px;
   font: var(--bodyCopyFontStyling);
   background-color: var(--primaryColor);
   border-radius: 2px;
@@ -259,6 +259,8 @@ footer > ul > li > a {
 }
 
 #login-container > p > a {
+  color: var(--secondaryColor);
+  font: var(--bodyCopyFontStyling);
 }
 
 /* Stylization for the login.handlebars render ends. */
