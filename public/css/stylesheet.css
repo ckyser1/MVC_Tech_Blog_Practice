@@ -3,8 +3,15 @@
 :root {
   --primaryColor: #f9fafb;
   --secondaryColor: #202121;
+  --ternaryColor: #efefef;
   --bodyCopyFontStyling: 400 12pt/14pt "Lato", sans-serif;
+  --buttonFontStyling: 900 12pt/14pt "Lato", sans-serif;
   --titleFontStyling: 700 24pt/24pt "Lato", sans-serif;
+  --subTitleFontStyling: 700 18pt/18pt "Lato", sans-serif;
+  --activePrimary: #72c05b;
+  --activeSecondary: #e1ffe1;
+  --badgePrimary: #84d5f7;
+  --badgeSecondary: #f0fcff;
 }
 
 /* Base styling for the body along with a reset for the default margin and padding that is applied through browsers */
@@ -36,6 +43,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   gap: 25px;
+  border-bottom: 1px solid var(--ternaryColor);
 }
 
 header > img {
@@ -53,9 +61,19 @@ header > nav {
 header > nav a {
   color: var(--secondaryColor);
   text-decoration: none;
-  margin: 0px 10px;
-  padding: 10px 0px;
+  margin: 0px 5px;
+  padding: 10px 5px;
   font: var(--bodyCopyFontStyling);
+  background-color: var(--primaryColor);
+  border-radius: 2px;
+  transition: 250ms linear;
+  text-transform: uppercase;
+}
+
+header > nav a:hover {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  transition: 250ms linear;
 }
 
 /* Stylization for the header section ends. */
@@ -74,6 +92,7 @@ main {
 footer {
   width: 100%;
   background-color: var(--primaryColor);
+  border-top: 1px solid var(--ternaryColor);
 }
 
 footer > h6 {
@@ -81,7 +100,6 @@ footer > h6 {
   font: var(--bodyCopyFontStyling);
   text-align: center;
   padding: 25px 0px 0px 0px;
-  border-top: 1px solid var(--secondaryColor);
 }
 
 footer > ul {
@@ -144,5 +162,103 @@ footer > ul > li > a {
 
 /* Hero section ends. */
 
-/* most recent post section begins */
-/* most recent post section ends */
+/* most recent post section begins. */
+
+/* most recent post section ends. */
+
+/* Stylization for the homepage.handlebars render ends. */
+
+/* Stylization for the login.handlebars render begins. */
+
+#login-container {
+  width: calc(100% - 200px);
+  padding: 100px;
+  background-color: var(--primaryColor);
+  max-width: 1440px;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: column wrap;
+  height: auto;
+  justify-content: space-around;
+  gap: 50px;
+  text-align: center;
+}
+
+#login-container > h2 {
+  font: var(--subTitleFontStyling);
+  color: var(--secondaryColor);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: 100%;
+  text-align: center;
+}
+
+#login-container > #login-form {
+  width: 100%;
+  max-width: 1440px;
+  background-color: var(--primaryColor);
+  padding: 0px;
+  margin: 0px;
+  flex: 0 0 auto;
+  display: flex;
+  height: 350px;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  border-top: 1px solid var(--ternaryColor);
+}
+
+#login-container > #login-form > label {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondaryColor);
+  text-align: center;
+}
+
+#login-container > #login-form > input[name] {
+  width: calc(65% - 70px);
+  margin: 0px 17.5%;
+  padding: 10px 35px;
+  text-align: center;
+  font: var(--bodyCopyFontStyling);
+  color: var(--secondaryColor);
+}
+
+#login-container > #login-form > input {
+  border-radius: 5px;
+  border: 2px solid var(--ternaryColor);
+}
+
+#login-container > #login-form > input[type="submit"] {
+  width: 150px;
+  margin: 25px calc(50% - 75px) 0px;
+  padding: 10px 25px;
+  background-color: var(--activePrimary);
+  color: var(--activeSecondary);
+  border: 1px solid var(--activeSecondary);
+  font: var(--buttonFontStyling);
+  transition: 250ms linear;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+#login-container > #login-form > input[type="submit"]:hover {
+  cursor: pointer;
+  transition: 250ms linear;
+  background-color: var(--activeSecondary);
+  color: var(--activePrimary);
+  border: 1px solid var(--activePrimary);
+}
+
+#login-container > p {
+  font: var(--bodyCopyFontStyling);
+  color: var(--secondaryColor);
+  letter-spacing: 0.1em;
+}
+
+#login-container > p > a {
+}
+
+/* Stylization for the login.handlebars render ends. */
