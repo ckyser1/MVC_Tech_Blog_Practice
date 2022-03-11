@@ -19,6 +19,7 @@
             <section>
                 {{#if logged_in}}
                 <a href="/profile" class="nav-btn">Profile</a>
+                <a href="/logout" class="nav-btn">Log Out</a>
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
@@ -38,5 +39,9 @@
             <li><a href="http://github.com/nathanrusselldev">Nate Russell</a></li>
         </ul>
     </footer>
+
+        {{#if logged_in}}
+            <script src="/public/js/logout.js"></script>
+        {{/if}}
 </body>
 </html>
