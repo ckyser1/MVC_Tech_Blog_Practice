@@ -58,7 +58,7 @@ header > nav {
   justify-content: space-between;
 }
 
-header > nav a {
+header > nav .nav-btn {
   color: var(--secondaryColor);
   text-decoration: none;
   margin: 0px 10px;
@@ -68,9 +68,11 @@ header > nav a {
   border-radius: 2px;
   transition: 250ms linear;
   text-transform: uppercase;
+  border: none;
+  display: inline-block;
 }
 
-header > nav a:hover {
+header > nav .nav-btn:hover {
   background-color: var(--secondaryColor);
   color: var(--primaryColor);
   transition: 250ms linear;
@@ -256,6 +258,10 @@ footer > ul > li > a {
   font: var(--bodyCopyFontStyling);
   color: var(--secondaryColor);
   letter-spacing: 0.1em;
+}
+
+#login-container > #incorrectInformation {
+  color: red;
 }
 
 #login-container > p > a {
