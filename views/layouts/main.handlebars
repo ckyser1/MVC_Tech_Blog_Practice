@@ -22,8 +22,8 @@
             </section>
             <section>
                 {{#if logged_in}}
-                <a href="/profile" class="nav-btn">Profile</a>
-                <a href="/logout" class="nav-btn" id="logout-btn">LogOut</a>
+                <button href="/userProfile" class="nav-btn" id="useProf">Profile</button>
+                <button href="/logout" class="nav-btn" id="logout-btn">LogOut</button>
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
@@ -46,6 +46,7 @@
 
         {{#if logged_in}}
             <script src="./js/logout.js"></script>
+            <script src="./js/userProfile.js"></script>
         {{/if}}
 </body>
 </html>
