@@ -60,6 +60,8 @@ header > nav a {
 
 /* Stylization for the homepage.handlebars render begins. */
 
+/* Hero section begins */
+
 #hero-section {
   width: 100%;
   height: calc(100vh - 100px);
@@ -85,3 +87,9 @@ header > nav a {
   font: var(--titleFontStyling);
   color: var(--primaryColor);
 }
+
+#hero-section > h2 {
+  font-style: italic;
+}
+
+/* Hero section ends. */
