@@ -1,8 +1,13 @@
+/* Defining some common repeating variables that will be used throughout the project. */
+
 :root {
   --primaryColor: #f9fafb;
   --secondaryColor: #202121;
-  --bodyCopyFontStyling: ;
+  --bodyCopyFontStyling: 400 12pt/14pt "Lato", sans-serif;
+  --titleFontStyling: 700 24pt/24pt "Lato", sans-serif;
 }
+
+/* Base styling for the body along with a reset for the default margin and padding that is applied through browsers */
 
 * {
   margin: 0px;
@@ -13,15 +18,70 @@ body {
   width: 100vw;
   height: auto;
   background-color: var(--primaryColor);
+  overflow-x: hidden;
 }
 
+/* Styling for the header section begins. */
+
 header {
-  width: calc(100% - 100px);
+  width: calc(100% - 150px);
   height: 60px;
-  padding: 20px 50px;
+  padding: 20px 75px;
   background-color: var(--primaryColor);
+  max-width: 1440px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
 }
 
 header > img {
-  height: 60px;
+  width: 200px;
+  display: inline-block;
+}
+
+header > nav {
+  width: calc(100% - 235px);
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > nav a {
+  color: var(--secondaryColor);
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 0px;
+  font: var(--bodyCopyFontStyling);
+}
+
+/* Stylization for the header section ends. */
+
+/* Stylization for the homepage.handlebars render begins. */
+
+#hero-section {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-image: url(../images/palceholder-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 35px;
+  filter: grayscale();
+}
+
+#hero-section > h1,
+#hero-section > h2 {
+  width: 75%;
+  max-width: calc(1440px * 0.75);
+  margin: 0px auto;
+  text-align: center;
+  font: var(--titleFontStyling);
+  color: var(--primaryColor);
 }
