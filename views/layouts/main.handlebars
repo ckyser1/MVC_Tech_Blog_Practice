@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RE-Connect</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
     <header>
-        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect" style="width: 150px; height:auto;">
+        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect">
         <nav>
             <section id="navigation-links">
                 <a href="/">Home</a>
@@ -39,5 +43,9 @@
             <li><a href="http://github.com/nathanrusselldev">Nate Russell</a></li>
         </ul>
     </footer>
+
+        {{#if logged_in}}
+            <script src="/public/js/logout.js"></script>
+        {{/if}}
 </body>
 </html>
