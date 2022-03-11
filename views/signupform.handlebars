@@ -13,7 +13,7 @@
     <h2 class="formHeadings">Contact Information:</h2>    
 
         <label for="fname">First name:</label><br>
-            <input type="text" id="formFNAME" name="fname"><br>
+            <input type="text" id="formFName" name="fname"><br>
         <label for="lname">Last name:</label><br>
             <input type="text" id="formLName" name="lname"><br>
         <label for="email">Email:</label><br>
@@ -23,11 +23,11 @@
     <div>
     <h2 class="formHeadings">Status</h2>
 
-    <input type="radio" id="Healthy" name="Health Status" value="">
+    <input type="radio" id="healthy" name="Health Status" value="healthy">
         <label for="html">Healthy</label><br>
-    <input type="radio" id="Sick" name="Health Status" value="">
+    <input type="radio" id="sick" name="Health Status" value="sick">
         <label for="sick">Sick</label><br>
-    <input type="radio" id="Injured" name="Health Status" value="">
+    <input type="radio" id="injured" name="Health Status" value="injured">
         <label for="injured">Injured</label><br>
        
     </div>    
@@ -283,14 +283,14 @@
         <option value="Zimbabwe">Zimbabwe</option>
      </select>
      <br>
-    <textarea rows="6" cols="50" name="bio">Enter information about yourself here...</textarea>
+    <textarea id="bio" rows="6" cols="50" name="bio">Enter information about yourself here...</textarea>
     </div>
     <br>
     <input type="submit" id="postFormSubmit" name="formSubmit" value="Submit">
 
     </form>
 
-
+<script src="/js/createProfile.js"></script>
 
 </body>
 </html>
