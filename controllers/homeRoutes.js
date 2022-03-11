@@ -32,6 +32,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+<<<<<<< HEAD
+router.get('/signup', (req,res) => {
+  res.render('signupform')
+})
+=======
 
+>>>>>>> cf8a9f7e4872fc995cf45c57e0b52d8ee074c3bc
 
 module.exports = router;
