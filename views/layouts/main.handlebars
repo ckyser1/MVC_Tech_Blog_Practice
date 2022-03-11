@@ -16,14 +16,19 @@
         <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect">
         <nav>
             <section id="navigation-links">
-                <a href="/">Home</a>
-                <a href="/posts">Postings</a>
-                <a href="/families">Families</a>
+                <a class="nav-btn" href="/">Home</a>
+                <a class="nav-btn" href="/posts">Postings</a>
+                <a class="nav-btn" href="/families">Families</a>
             </section>
             <section>
                 {{#if logged_in}}
+<<<<<<< HEAD
                 <button href="/userProfile" class="nav-btn" id="useProf">Profile</button>
                 <button href="/logout" class="nav-btn" id="logout-btn">LogOut</button>
+=======
+                <a href="/profile" class="nav-btn">Profile</a>
+                <button class="nav-btn" id="logout-btn">LogOut</button>
+>>>>>>> 9233ee7d673aa72b57185253a35880f85322cfb5
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}

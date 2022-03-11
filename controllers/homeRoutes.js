@@ -28,7 +28,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
@@ -38,6 +37,12 @@ router.get('/userProfile', (req, res) => {
     res.redirect('/userProfile');
     return;
   }
+router.get(`/signup`, (req, res) => {
+  res.render(`signupform`);
+});
+
+router.get(`/newPost`, (req, res) => {
+  res.render(`newPosting`);
 });
 
 module.exports = router;
