@@ -16,14 +16,14 @@
         <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect">
         <nav>
             <section id="navigation-links">
-                <a href="/">Home</a>
-                <a href="/posts">Postings</a>
-                <a href="/families">Families</a>
+                <a class="nav-btn" href="/">Home</a>
+                <a class="nav-btn" href="/posts">Postings</a>
+                <a class="nav-btn" href="/families">Families</a>
             </section>
             <section>
                 {{#if logged_in}}
                 <a href="/profile" class="nav-btn">Profile</a>
-                <a href="/logout" class="nav-btn">LogOut</a>
+                <button class="nav-btn" id="logout-btn">LogOut</button>
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
@@ -45,7 +45,7 @@
     </footer>
 
         {{#if logged_in}}
-            <script src="/public/js/logout.js"></script>
+            <script src="./js/logout.js"></script>
         {{/if}}
 </body>
 </html>
