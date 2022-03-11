@@ -15,11 +15,12 @@ Post.init(
         },
         post_title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
+
         },
         post_bio: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         post_seeking: {
             type: DataTypes.TEXT,
@@ -34,7 +35,7 @@ Post.init(
 
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'post'
