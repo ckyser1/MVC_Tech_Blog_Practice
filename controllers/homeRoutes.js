@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
 const { User, Post } = require('../models');
+const loginCheck = require('../utils/loginCheck');
 //const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -42,7 +43,7 @@ router.get('/userProfile', async (req, res) => {
 
   router.get('/search/:last_name', async (req, res) => {
     try {
-      const searchResult = await User.findAll({last_name:req.params.last_name})
+      const searchResult = await User.findAll({ where: { last_name:req.params.last_name } })
       const searchResultData = searchResult.map((res) =>  res.get({plain:true}))
       console.log(searchResult)
       res.render('searchresults', {searchResult:searchResultData})
@@ -57,23 +58,12 @@ router.get('/searchresults', (req,res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signupform');
-  // router.get('/postings', async (req, res) => {
-  //   try {
-  //       const pData = await Post.findAll ({
-  //       });
-  //      const userPosts = pData.map((pDataObject)=>
-  //      pDataObject.get({plain:true})
-  //      );
-  //       res.render('postings', {
-  //              post:userPosts,
-  //              logged_in: req.session.logged_in,
-  //            });
-        
-  //     } catch (err) {
-  //       console.log(err);
-  //       res.status(500).json(err);
-  //     }
-    });
+
+});
+  
+router.get('/newPosting', (req,res) => {
+  res.render('newPosting');
+})    
 
   router.get('/postings', async (req, res) => {
     try {
@@ -99,7 +89,7 @@ router.get('/signup', (req, res) => {
     });
 
 
-router.get(`/signup`, (req, res) => {
+router.get('/signup', (req, res) => {
   res.render(`signupform`);
 });
 
