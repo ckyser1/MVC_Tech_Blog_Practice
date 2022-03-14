@@ -19,8 +19,10 @@ const newProfile = async (e) => {
         })
     if (response.ok) {
         
-        location.replace('/')
-
+        document.location.replace('/')
+    
+    } else {
+        alert('fail')
     }}
 }
 

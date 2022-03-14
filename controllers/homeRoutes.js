@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
 const { User, Post } = require('../models');
 //const withAuth = require('../utils/auth');
 
@@ -39,6 +40,23 @@ router.get('/userProfile', async (req, res) => {
     }
   });
 
+  router.get('/search/:last_name', async (req, res) => {
+    try {
+      const searchResult = await User.findAll({last_name:req.params.last_name})
+      const searchResultData = searchResult.map((res) =>  res.get({plain:true}))
+      console.log(searchResult)
+      res.render('searchresults', {searchResult:searchResultData})
+    } catch (err) {
+      res.status(400).json(err);
+    }
+})
+
+router.get('/searchresults', (req,res) => {
+  res.render('searchresults');
+})
+
+router.get('/signup', (req, res) => {
+  res.render('signupform');
   // router.get('/postings', async (req, res) => {
   //   try {
   //       const pData = await Post.findAll ({
@@ -55,7 +73,7 @@ router.get('/userProfile', async (req, res) => {
   //       console.log(err);
   //       res.status(500).json(err);
   //     }
-  //   });
+    });
 
   router.get('/postings', async (req, res) => {
     try {
@@ -85,8 +103,8 @@ router.get(`/signup`, (req, res) => {
   res.render(`signupform`);
 });
 
-router.get(`/newPost`, (req, res) => {
-  res.render(`newPosting`);
+router.get('/newPost', (req, res) => {
+  res.render('newPosting');
 });
 
 module.exports = router;
