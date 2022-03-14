@@ -39,9 +39,31 @@ router.get('/userProfile', async (req, res) => {
     }
   });
 
+  router.get('/postings', async (req, res) => {
+    try {
+        const pData = await User.findAll ({
+          include: [
+            {
+              model: Post
+            },
+          ],
+        });
+       const userPosts = pData.map((pDataObject)=>
+       pDataObject.get({plain:true})
+       );
 
-
-
+       console.log(req.session.logged_in)
+    
+        res.render('postings', {
+               user: userPosts,
+               logged_in: req.session.logged_in,
+             });
+        
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
 
 
 router.get(`/signup`, (req, res) => {
