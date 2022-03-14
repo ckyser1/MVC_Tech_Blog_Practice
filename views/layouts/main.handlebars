@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RE-Connect</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
 <body>
     <header>
-        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect">
+        <img src="/images/REConnect-logo.svg" alt="logo for tha company re-connect">
         <nav>
             <section id="navigation-links">
                 <a class="nav-btn" href="/">Home</a>
@@ -27,8 +27,9 @@
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
-                <input type="text" data-searchBar="search-context" placeholder="Search Here.">
-                <button type="submit" data-searchBar="search-submit"></button>
+                
+                <input id="searchText" type="text" data-searchBar="search-context" placeholder="Search Here.">
+                <button id="searchSubmit" type="submit" data-searchBar="search-submit">🔍</button>
             </section>
         </nav>
     </header>
@@ -45,8 +46,9 @@
     </footer>
 
         {{#if logged_in}}
-            <script src="./js/logout.js"></script>
-            <script src="./js/userProfile.js"></script>
+            <script src="/js/logout.js"></script>
+            <script src="/js/userProfile.js"></script>
         {{/if}}
+    <script src="/js/search.js"></script>
 </body>
 </html>
