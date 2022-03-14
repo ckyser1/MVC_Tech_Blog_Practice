@@ -1,25 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
-//Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
-  // try {
-  //    const userData = await User.findAll({
-  //      attributes: { exclude: ['password'] },
-  //      order: [['name', 'ASC']],
-  //    });
-
-  //    const users = userData.map((project) => project.get({ plain: true }));
   res.render('homepage', {
-    //users,
-    // Pass the logged in flag to the template
     logged_in: req.session.logged_in,
   });
-
-  // } catch (err) {
-  //    res.status(500).json(err);
-  // }
 });
 
 router.get('/login', (req, res) => {
@@ -31,12 +17,33 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/userProfile', (req, res) => {
-  // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
-    res.redirect('/userProfile');
-    return;
-  }
+router.get('/userProfile', async (req, res) => {
+  try {
+      const uData = await User.findByPk(req.session.user_id, {
+        include: [
+          {
+            model: Post
+          },
+        ],
+      });
+     const userProfile = uData.get({plain:true});
+     console.log(req.session.logged_in)
+  
+      res.render('userProfile', {
+             user: userProfile,
+             logged_in: req.session.logged_in,
+           });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+
+
+
+
 router.get(`/signup`, (req, res) => {
   res.render(`signupform`);
 });
