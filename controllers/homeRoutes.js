@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
 const { User, Post } = require('../models');
-const withAuth = require('../utils/auth');
+//const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   res.render('homepage', {
@@ -57,6 +57,50 @@ router.get('/searchresults', (req,res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signupform');
+  // router.get('/postings', async (req, res) => {
+  //   try {
+  //       const pData = await Post.findAll ({
+  //       });
+  //      const userPosts = pData.map((pDataObject)=>
+  //      pDataObject.get({plain:true})
+  //      );
+  //       res.render('postings', {
+  //              post:userPosts,
+  //              logged_in: req.session.logged_in,
+  //            });
+        
+  //     } catch (err) {
+  //       console.log(err);
+  //       res.status(500).json(err);
+  //     }
+    });
+
+  router.get('/postings', async (req, res) => {
+    try {
+        const pData = await Post.findAll ({
+          include: [
+            {
+              model: User
+            },
+          ],
+        });
+        const userPosts = pData.map((pDataObject)=>
+          pDataObject.get({plain:true})
+        );
+        console.log(userPosts);
+        res.render('postings', {
+               userPosts,
+               logged_in: req.session.logged_in,
+             });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
+
+
+router.get(`/signup`, (req, res) => {
+  res.render(`signupform`);
 });
 
 router.get('/newPost', (req, res) => {
