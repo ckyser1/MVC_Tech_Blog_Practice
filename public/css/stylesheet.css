@@ -365,11 +365,15 @@ footer > ul > li > a {
     align-items: center;
     justify-content: center;
     padding: 0px;
-    display: flex block;
+    display: flex;
   }
 }
 
 @media screen and (max-width: 575px) {
+  main {
+    padding-top: 100px;
+  }
+
   header {
     position: fixed;
     display: block;
@@ -379,6 +383,16 @@ footer > ul > li > a {
     overflow: hidden;
     z-index: 10;
     transition: 400ms ease-in-out;
+  }
+
+  header.closed {
+    height: 60px;
+    background-color: var(--primaryColor);
+  }
+
+  header.open {
+    height: 100vh;
+    background-color: var(--ternaryColor);
   }
 
   header > #logo {
@@ -396,6 +410,84 @@ footer > ul > li > a {
   }
 
   header > nav {
+    display: none;
+  }
+
+  nav.open {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    height: calc(100vh - 100px);
+    gap: 25px;
+  }
+
+  nav.open > #navigation-links {
+    width: 100%;
+    height: calc(65vh - 100px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  nav.open > #navigation-links > a {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--ternaryColor);
+    width: 100%;
+    padding: 0px;
+    margin: 0px auto;
+  }
+
+  nav.open > #navigation-links > a:first-of-type {
+    border-top: none;
+  }
+
+  nav.open > #navigation-account {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column-reverse wrap;
+    justify-content: space-around;
+    text-align: center;
+    gap: 25px;
+  }
+
+  nav.open > #navigation-account > a {
+    padding: 25px 0px;
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+  }
+
+  #navigation-account > input {
+    width: 85%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--ternaryColor);
+    color: var(--secondaryColor);
+  }
+
+  #navigation-account > button {
+    width: 100px;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    position: absolute;
+    border-radius: 0px 5px 5px 0px;
+    right: 2.5%;
+    top: auto;
+  }
+
+  nav.closed {
+    transition-delay: 0ms;
+    height: auto;
     display: none;
   }
 }

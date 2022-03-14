@@ -13,26 +13,21 @@
 </head>
 <body>
     <header>
-<<<<<<< HEAD
-        <img src="/images/REConnect-logo.svg" alt="logo for tha company re-connect">
-=======
-        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect" id="logo">
-        <img src="./images/icon-hamburger.svg" alt="Navigation icon for the mobile version of the application" id="nav-icon">
->>>>>>> 9750b1a2472d12802236be3fe77f5c79a1366886
+        <img src="/images/REConnect-logo.svg" alt="logo for tha company re-connect" id="logo">
+        <img src="/images/icon-hamburger.svg" alt="Navigation icon for the mobile version of the application" id="nav-icon">
         <nav>
             <section id="navigation-links">
                 <a class="nav-btn" href="/">Home</a>
                 <a class="nav-btn" href="/postings">Postings</a>
                 <a class="nav-btn" href="/families">Families</a>
             </section>
-            <section>
+            <section id="navigation-account">
                 {{#if logged_in}}
                 <a href="/userProfile" class="nav-btn" id="useProf">Profile</a>
                 <button href="/logout" class="nav-btn" id="logout-btn">LogOut</button>
                 {{else}}
                 <a href="/login" class="nav-btn">Log In</a>
                 {{/if}}
-                
                 <input id="searchText" type="text" data-searchBar="search-context" placeholder="Search Here.">
                 <button id="searchSubmit" type="submit" data-searchBar="search-submit">🔍</button>
             </section>
