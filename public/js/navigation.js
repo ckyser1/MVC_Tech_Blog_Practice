@@ -1,6 +1,7 @@
 const $navIcon = document.querySelector(`#nav-icon`);
 const $nav = document.querySelector(`nav`);
 const $header = document.querySelector(`header`);
+const $searchBtn = document.querySelector(`#searchSubmit`)
 
 function openNavigation() {
     switch ($navIcon.getAttribute(`src`)) {
@@ -25,3 +26,10 @@ function openNavigation() {
 }
 
 $navIcon.addEventListener(`click`, openNavigation);
+window.addEventListener(`resize`, function () {
+    if (window.innerWidth <= 575) {
+        $searchBtn.innerHTML = `🔍Search`
+    } else {
+        $searchBtn.innerHTML = `🔍`
+    }
+})
