@@ -13,7 +13,8 @@
 </head>
 <body>
     <header>
-        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect">
+        <img src="./images/REConnect-logo.svg" alt="logo for tha company re-connect" id="logo">
+        <img src="./images/icon-hamburger.svg" alt="Navigation icon for the mobile version of the application" id="nav-icon">
         <nav>
             <section id="navigation-links">
                 <a class="nav-btn" href="/">Home</a>
@@ -43,9 +44,9 @@
             <li><a href="http://github.com/nathanrusselldev">Nate Russell</a></li>
         </ul>
     </footer>
-
-        {{#if logged_in}}
-            <script src="./js/logout.js"></script>
-        {{/if}}
+    <script src="./js/navigation.js"></script>
+    {{#if logged_in}}
+        <script src="./js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

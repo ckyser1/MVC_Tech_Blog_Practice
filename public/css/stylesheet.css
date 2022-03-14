@@ -4,6 +4,7 @@
   --primaryColor: #f9fafb;
   --secondaryColor: #202121;
   --ternaryColor: #efefef;
+  --quaternaryColor: #bcbcbc;
   --bodyCopyFontStyling: 400 12pt/14pt "Lato", sans-serif;
   --buttonFontStyling: 900 12pt/14pt "Lato", sans-serif;
   --titleFontStyling: 700 24pt/24pt "Lato", sans-serif;
@@ -46,9 +47,13 @@ header {
   border-bottom: 1px solid var(--ternaryColor);
 }
 
-header > img {
+header > #logo {
   width: 200px;
   display: inline-block;
+}
+
+header > #nav-icon {
+  display: none;
 }
 
 header > nav {
@@ -284,14 +289,113 @@ footer > ul > li > a {
   width: 100%;
   text-align: left;
   font: var(--subTitleFontStyling);
+  font-weight: 300;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
   padding-bottom: 50px;
   border-bottom: 1px solid var(--ternaryColor);
 }
 
-#new-post-container > form {
-  width: 100%;
+#new-post-container > #new-post-form {
+  width: calc(100% - 100px);
   display: flex;
-  height: 400px;
+  height: auto;
   flex-flow: column wrap;
+  padding: 25px 50px;
+}
+
+#new-post-container > #new-post-form > label {
+  font: var(--bodyCopyFontStyling);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--quaternaryColor);
+  padding: 25px 0px;
+}
+
+#new-post-container > #new-post-form > input {
+  height: auto;
+  padding: 15px 30px;
+  font: var(--bodyCopyFontStyling);
+  color: var(--secondaryColor);
+  width: auto;
+}
+
+#new-post-container > #new-post-form > #post-bio {
+  padding: 15px 30px;
+  width: calc(100% - 60px);
+  height: 300px;
+  resize: none;
+  font: var(--bodyCopyFontStyling);
+  color: var(--secondaryColor);
+  line-height: 18pt;
+  overflow-y: auto;
+}
+
+#new-post-container > #new-post-form > input[type="submit"] {
+  width: auto;
+  margin: 25px auto 0px auto;
+  padding: 15px 30px;
+  background-color: var(--badgePrimary);
+  color: var(--badgeSecondary);
+  border: 1px solid var(--badgeSecondary);
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: 250ms ease-in-out;
+}
+
+#new-post-container > #new-post-form > input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: var(--badgeSecondary);
+  color: var(--badgePrimary);
+  border: 1px solid var(--badgePrimary);
+  transition: 250ms ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+  }
+
+  header > nav {
+    width: auto;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    display: flex block;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 25px 0px 10px;
+    overflow: hidden;
+    z-index: 10;
+    transition: 400ms ease-in-out;
+  }
+
+  header > #logo {
+    position: absolute;
+    left: calc(50% - 100px);
+  }
+
+  header > #nav-icon {
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    width: 25px;
+    height: 25px;
+    top: 35px;
+  }
+
+  header > nav {
+    display: none;
+  }
 }
