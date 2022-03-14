@@ -4,16 +4,16 @@ const $header = document.querySelector(`header`);
 
 function openNavigation() {
     switch ($navIcon.getAttribute(`src`)) {
-        case `./images/icon-hamburger.svg`:
-            $navIcon.setAttribute(`src`, `./images/icon-close.svg`)
+        case `/images/icon-hamburger.svg`:
+            $navIcon.setAttribute(`src`, `/images/icon-close.svg`)
             console.log(`this is when the navigation will open`)
             $header.classList.add(`open`);
             $header.classList.remove(`closed`);
             $nav.classList.add(`open`);
             $nav.classList.remove(`closed`);
             break;
-        case `./images/icon-close.svg`:
-            $navIcon.setAttribute(`src`, `./images/icon-hamburger.svg`)
+        case `/images/icon-close.svg`:
+            $navIcon.setAttribute(`src`, `/images/icon-hamburger.svg`)
             console.log(`this is when the navigation will close`)
             $header.classList.add(`closed`);
             $header.classList.remove(`open`);
