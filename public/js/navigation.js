@@ -7,12 +7,18 @@ function openNavigation() {
         case `./images/icon-hamburger.svg`:
             $navIcon.setAttribute(`src`, `./images/icon-close.svg`)
             console.log(`this is when the navigation will open`)
-            $header.style.height = `100vh`;
+            $header.classList.add(`open`);
+            $header.classList.remove(`closed`);
+            $nav.classList.add(`open`);
+            $nav.classList.remove(`closed`);
             break;
         case `./images/icon-close.svg`:
             $navIcon.setAttribute(`src`, `./images/icon-hamburger.svg`)
             console.log(`this is when the navigation will close`)
-            $header.style.height = `auto`;
+            $header.classList.add(`closed`);
+            $header.classList.remove(`open`);
+            $nav.classList.add(`closed`);
+            $nav.classList.remove(`open`);
         default:
             break;
     }
