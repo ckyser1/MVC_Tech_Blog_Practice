@@ -1,11 +1,8 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
 const { User, Post } = require('../models');
-<<<<<<< HEAD
-=======
 const loginCheck = require('../utils/loginCheck');
 //const withAuth = require('../utils/auth');
->>>>>>> 48ab80b7662badac3428dd903a840a2853c9dbd4
 
 router.get('/', async (req, res) => {
   res.render('homepage', {
@@ -55,9 +52,6 @@ router.get('/userProfile', async (req, res) => {
     }
 })
 
-<<<<<<< HEAD
-  router.get('/postings', async (req, res) => {
-=======
 router.get('/searchresults', (req,res) => {
   res.render('searchresults');
 })
@@ -72,7 +66,6 @@ router.get('/newPosting', (req,res) => {
 })    
 
 router.get('/postings', async (req, res) => {
->>>>>>> 48ab80b7662badac3428dd903a840a2853c9dbd4
     try {
         const pData = await Post.findAll ({
           include: [
