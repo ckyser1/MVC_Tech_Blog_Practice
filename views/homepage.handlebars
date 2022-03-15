@@ -1,24 +1,13 @@
 {{!-- Have this contain the background hero image along with text content for the landing page of the document. --}}
 <section id="hero-section">
     <h1>
-        Inspirational Words
+        RECONNECT
     </h1>
     <h2>
-        Inspirational quote - "dude quoted"
+        Our primary mission is to help families re-connect through the power of the web.
     </h2>
 </section>
 {{!-- Have the most recent post that has been added to the application displayed here on the front page being rendered from the home --}}
 <section id="recentposting">
     {{> recentPosting}}
 </section>
-
-<section id="comments">
-    {{> comments}}
-</section>
-
-{{#if logged_in}}
-    <button onclick="window.location.href='/postings'">View More</button>
-    <button class="homepage-btn">Submit Response</button>
-{{else}}
-    <button>View More</button>
-{{/if}}
