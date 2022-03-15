@@ -3,30 +3,30 @@ const { User, Post } = require('../models');
 const loginCheck = require('../utils/loginCheck');
 const withAuth = require('../utils/auth');
 
-// router.get('/', async (req, res) => {
-//   res.render('homepage');
-// });
-
 router.get('/', async (req, res) => {
-  try {
-    
-    const pmData = await Post.findByPk (req.session.user_id,{
-      include: [
-        {
-          model: User
-        },
-      ],
-    });
-    const mainPost = pmData.get({plain:true});
-    console.log(mainPost);
-    res.render('/', {
-           mainPost,
-         });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  res.render('homepage');
 });
+
+// router.get('/', async (req, res) => {
+//   try {
+    
+//     const pmData = await Post.findByPk (req.session.views,{
+//       include: [
+//         {
+//           model: User
+//         },
+//       ],
+//     });
+//     const mainPost = pmData.get({plain:true});
+//     console.log(mainPost);
+//     res.render('/', {
+//            mainPost,
+//          });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
