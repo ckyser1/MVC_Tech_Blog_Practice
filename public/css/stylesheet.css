@@ -276,6 +276,35 @@ footer > ul > li > a {
 
 /* Stylization for the login.handlebars render ends. */
 
+/* Stylization for the userProfile.handlebars begins */
+#profile-header{
+  display: block;
+  margin-left: 20px;
+}
+
+#profile-left{
+  display: block;
+  margin-left: 20px;
+}
+
+#profile-left > img{
+  max-height: 300px;
+
+}
+
+#profile-right{
+  display: block;
+  margin-left: 20px;
+
+}
+
+/* Stylization for the comments.handlebars begins */
+#comment-box {
+  border: solid;
+  height: 20px;
+}
+
+
 /* Stylization for the newPost.handlebars begins */
 
 #new-post-container {
