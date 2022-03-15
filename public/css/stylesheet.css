@@ -407,8 +407,8 @@ footer > ul > li > a {
 #sign-up-container > form > section > hr {
   width: 85%;
   margin: 0px auto;
-  height: 2px;
-  background-color: var(--ternaryColor);
+  height: 1px;
+  background-color: var(--quaternaryColor);
   border: none;
 }
 
@@ -457,6 +457,39 @@ footer > ul > li > a {
 }
 
 /* user-status styling ends. */
+
+/* user location section begins. */
+
+#sign-up-container > form > #user-location-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-location-section select {
+  padding: 5px 15px;
+  font: var(--bodyCopyFontStyling);
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  border: 1px solid var(--quaternaryColor);
+  border-radius: 5px;
+  width: calc(50% - 55px);
+  text-align: center;
+}
+
+#user-location-section input {
+  width: calc(50% - 55px);
+  font: var(--bodyCopyFontStyling);
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--quaternaryColor);
+  text-align: center;
+}
+
+/* user location section ends. */
 
 /* Stylization for the signUpForm.handlebars ends. */
 

@@ -65,11 +65,11 @@ router.get('/search/:last_name', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-});
+})
 
 router.get('/searchresults', (req, res) => {
   res.render('searchresults');
-});
+})
 
 router.get('/signup', (req, res) => {
   res.render('signupform');
@@ -78,7 +78,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/newPosting', (req, res) => {
   res.render('newPosting');
-});
+})
 
 
 router.get('/postings', async (req, res) => {
