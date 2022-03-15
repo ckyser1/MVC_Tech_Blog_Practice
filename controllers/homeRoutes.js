@@ -1,27 +1,13 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
 const { User, Post } = require('../models');
-
+const loginCheck = require('../utils/loginCheck');
+//const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
-    const pmData = await Post.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: User
-        },
-      ],
-    });
-    const mainPost = pmData.get({ plain: true });
-    console.log(mainPost);
-    res.render('homepage', {
-      mainPost,
-      logged_in: req.session.logged_in,
-    });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  res.render('homepage', {
+    logged_in: req.session.logged_in,
+  });
 });
 
 router.get('/login', (req, res) => {
@@ -41,7 +27,6 @@ router.get('/userProfile', async (req, res) => {
           model: Post
         },
       ],
-      order: [['createdAt', 'DESC']]
     });
     const userProfile = uData.get({ plain: true });
     console.log(req.session.logged_in)
@@ -58,7 +43,7 @@ router.get('/userProfile', async (req, res) => {
 
 router.get('/search/:last_name', async (req, res) => {
   try {
-    const searchResult = await User.findAll({ where: { last_name: req.params.last_name } })
+    const searchResult = await User.findAll({ last_name: req.params.last_name })
     const searchResultData = searchResult.map((res) => res.get({ plain: true }))
     console.log(searchResult)
     res.render('searchresults', { searchResult: searchResultData })
@@ -80,7 +65,6 @@ router.get('/newPosting', (req, res) => {
   res.render('newPosting');
 })
 
-
 router.get('/postings', async (req, res) => {
   try {
     const pData = await Post.findAll({
@@ -89,13 +73,10 @@ router.get('/postings', async (req, res) => {
           model: User
         },
       ],
-      limit: 10,
-      order: [['updatedAt', 'DESC']],
     });
     const userPosts = pData.map((pDataObject) =>
       pDataObject.get({ plain: true })
     );
-    console.log(userPosts);
     res.render('postings', {
       userPosts,
       logged_in: req.session.logged_in,
@@ -107,12 +88,12 @@ router.get('/postings', async (req, res) => {
 });
 
 
-router.get('/signup', (req, res) => {
+router.get(`/signup`, (req, res) => {
   res.render(`signupform`);
 });
 
-router.get(`/newPost`, (req, res) => {
-  res.render(`newPosting`);
+router.get('/newPost', (req, res) => {
+  res.render('newPosting');
 });
 
 module.exports = router;

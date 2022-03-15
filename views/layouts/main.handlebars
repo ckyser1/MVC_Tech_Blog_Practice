@@ -35,8 +35,7 @@
     </header>
     <main>
     {{{body}}}
-    {{!-- <h3>{{mainPost.user.first_name}} {{mainPost.user.last_name}}</h3>
-            <p>{{mainPost.post_title}}</p> --}}
+
     </main>
     <footer>
         <h6>This project was created and developed by:</h6>
@@ -46,6 +45,10 @@
             <li><a href="http://github.com/nathanrusselldev">Nate Russell</a></li>
         </ul>
     </footer>
+    <script src="./js/navigation.js"></script>
+    {{#if logged_in}}
+        <script src="./js/logout.js"></script>
+    {{/if}}
 
 
         {{#if logged_in}}
@@ -53,6 +56,6 @@
             <script src="/js/userProfile.js"></script>
         {{/if}}
         <script src="/js/navigation.js"></script>
-    <script src="/js/search.js"></script>
+        <script src="/js/search.js"></script>
 </body>
 </html>

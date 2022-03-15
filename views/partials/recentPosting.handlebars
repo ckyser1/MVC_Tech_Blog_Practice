@@ -1,11 +1,17 @@
-<h3>Most Recent Posting</h3>
+<h2>Most Recent Posting</h2>
+<h3>
+    {{mainPost.user.first_name}} {{mainPost.user.last_name}}
+</h3>
+
 <h4>
-    
-    {{mainPost.user.first_name}} {{mainPost.user.last_name}},
     <br>
     {{mainPost.post_title}}
     <br>
+    <br>
     <span class="date-posted">{{mainPost.createdAt}}</span>
+    <br>
+    <br>
+    <span>Bio:</span>
 </h4>
 <p>
     {{mainPost.post_bio}}
