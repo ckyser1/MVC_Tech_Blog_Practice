@@ -40,7 +40,7 @@ router.get('/userProfile', async (req, res) => {
 
 router.get('/search/:last_name', async (req, res) => {
   try {
-    const searchResult = await User.findAll({where: {last_name: req.params.last_name }})
+    const searchResult = await User.findAll({ where: {last_name: req.params.last_name }})
     const searchResultData = searchResult.map((res) => res.get({ plain: true }))
     console.log(searchResult)
     res.render('searchresults', { searchResult: searchResultData })
