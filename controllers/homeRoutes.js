@@ -65,7 +65,7 @@ router.get('/newPosting', (req,res) => {
   res.render('newPosting');
 })    
 
-  router.get('/postings', async (req, res) => {
+router.get('/postings', async (req, res) => {
     try {
         const pData = await Post.findAll ({
           include: [
@@ -77,7 +77,6 @@ router.get('/newPosting', (req,res) => {
         const userPosts = pData.map((pDataObject)=>
           pDataObject.get({plain:true})
         );
-        console.log(userPosts);
         res.render('postings', {
                userPosts,
                logged_in: req.session.logged_in,
@@ -86,7 +85,7 @@ router.get('/newPosting', (req,res) => {
         console.log(err);
         res.status(500).json(err);
       }
-    });
+});
 
 
 router.get('/signup', (req, res) => {
