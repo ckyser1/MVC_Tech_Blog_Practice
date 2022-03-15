@@ -11,8 +11,13 @@
 <section id="recentposting">
     {{> recentPosting}}
 </section>
+
+<section id="comments">
+    {{> comments}}
+</section>
+
 {{#if logged_in}}
-    <button href="/postings" class="nav-btn">View More</button>
+    <button onclick="window.location.href='/postings'">View More</button>
     <button class="homepage-btn">Submit Response</button>
 {{else}}
     <button>View More</button>

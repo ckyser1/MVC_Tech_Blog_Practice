@@ -1,20 +1,22 @@
 <section id="profile-header">
     <h2>
-        {{user.email}}
+        {{user.first_name}} {{user.last_name}}
     </h2>
 </section>
 <article id="profile-container">
     <section id="profile-left">
         <img src="./images/profilePlaceholder.png" alt="placeholder for the profile icon.">
-        <a href="/newPosting" class="profile-btn">Edit Profile</a>
+        <br>
+        
     </section>
     <section id="profile-right">
-        <h3 id="profile-name">{{user.first_name}} {{user.last_name}}</h3>
-        <h3 id="health_status">{{user.health_status}}</h3>
-        <h3 id="location">{{user.location}}</h3>
-        <p id="about-me">{{post.post_bio}}</p>
-        <button id="active-post-btn">active post placeholder</button>
-        <button id="family-btn">family placeholder</button>
+    
+        <h3 id="health_status">Status:{{user.health_status}}</h3>
+        <h3 id="location">Location:{{user.location}}</h3>
+        <p id="about-me">{{user.post.post_bio}}</p>
+        <br>
+    
+        <a href="/newPosting" class="profile-btn">Edit Profile</a>
     </section>
 </article>
 <section id="profile-active-post">
