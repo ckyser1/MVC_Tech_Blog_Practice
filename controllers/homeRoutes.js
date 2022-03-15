@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
-<<<<<<< HEAD
-=======
 const loginCheck = require('../utils/loginCheck');
-//const withAuth = require('../utils/auth');
->>>>>>> 18b7c63b87102a77726c7c370976ee80c93312ca
+const withAuth = require('../utils/auth');
+
+// router.get('/', async (req, res) => {
+//   res.render('homepage');
+// });
 
 router.get('/', async (req, res) => {
   try {
@@ -18,11 +19,9 @@ router.get('/', async (req, res) => {
     });
     const mainPost = pmData.get({plain:true});
     console.log(mainPost);
-    res.render('homepage', {
+    res.render('/', {
            mainPost,
-           logged_in: req.session.logged_in,
          });
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -72,9 +71,6 @@ router.get('/userProfile', async (req, res) => {
     }
 })
 
-<<<<<<< HEAD
-  router.get('/postings', async (req, res) => {
-=======
 router.get('/searchresults', (req,res) => {
   res.render('searchresults');
 })
@@ -89,7 +85,6 @@ router.get('/newPosting', (req,res) => {
 })    
 
 router.get('/postings', async (req, res) => {
->>>>>>> 18b7c63b87102a77726c7c370976ee80c93312ca
     try {
         const pData = await Post.findAll ({
           include: [
