@@ -1,5 +1,10 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
+<<<<<<< HEAD
+=======
+const loginCheck = require('../utils/loginCheck');
+//const withAuth = require('../utils/auth');
+>>>>>>> 18b7c63b87102a77726c7c370976ee80c93312ca
 
 router.get('/', async (req, res) => {
   try {
@@ -67,7 +72,24 @@ router.get('/userProfile', async (req, res) => {
     }
 })
 
+<<<<<<< HEAD
   router.get('/postings', async (req, res) => {
+=======
+router.get('/searchresults', (req,res) => {
+  res.render('searchresults');
+})
+
+router.get('/signup', (req, res) => {
+  res.render('signupform');
+
+});
+  
+router.get('/newPosting', (req,res) => {
+  res.render('newPosting');
+})    
+
+router.get('/postings', async (req, res) => {
+>>>>>>> 18b7c63b87102a77726c7c370976ee80c93312ca
     try {
         const pData = await Post.findAll ({
           include: [
