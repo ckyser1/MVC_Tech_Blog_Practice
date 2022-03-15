@@ -163,8 +163,15 @@ footer > ul > li > a {
   color: var(--primaryColor);
 }
 
+#hero-section > h1 {
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
 #hero-section > h2 {
   font-style: italic;
+  font-weight: 400;
 }
 
 /* Hero section ends. */
@@ -277,33 +284,93 @@ footer > ul > li > a {
 /* Stylization for the login.handlebars render ends. */
 
 /* Stylization for the userProfile.handlebars begins */
-#profile-header{
+/* #profile-header {
   display: block;
   margin-left: 20px;
 }
 
-#profile-left{
+#profile-left {
   display: block;
   margin-left: 20px;
 }
 
-#profile-left > img{
+#profile-left > img {
   max-height: 300px;
-
 }
 
-#profile-right{
+#profile-right {
   display: block;
   margin-left: 20px;
+} */
 
+#profile-container {
+  width: calc(100% - 300px);
+  padding: 100px 150px;
+  margin: 0px auto;
+  max-width: 1440px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: var(--ternaryColor);
 }
+
+#profile-container > img {
+  width: 250px;
+  height: 250px;
+  display: block;
+}
+
+#profile-container > #profile-details {
+  width: calc(100% - 400px);
+  padding: 0px 75px;
+}
+
+#profile-container > #profile-details > h2 {
+  width: 100%;
+  padding: 0px 0px 15px;
+  font: var(--subTitleFontStyling);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+#profile-container > #profile-details > h2 > #location {
+  height: auto;
+  font: var(--bodyCopyFontStyling);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#profile-container > #profile-details > #health-status {
+  width: fit-content;
+  background-color: var(--badgePrimary);
+  color: var(--badgeSecondary);
+  border: 1px solid var(--badgePrimary);
+  font: var(--bodyCopyFontStyling);
+  padding: 5px 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+
+#profile-container > #profile-details > #about-me {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+}
+
+/* Stylization for the userProfile.handlebars ends */
 
 /* Stylization for the comments.handlebars begins */
+
+#comments-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
 #comment-box {
   border: solid;
   height: 20px;
 }
-
 
 /* Stylization for the newPost.handlebars begins */
 
@@ -381,6 +448,204 @@ footer > ul > li > a {
   transition: 250ms ease-in-out;
 }
 
+/* Stylization for the newPost.handlebars ends. */
+
+/* Stylization for the signUpForm.handlebars begins. */
+
+#sign-up-container {
+  width: calc(100% - 200px);
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 50px 100px;
+  height: auto;
+}
+
+#sign-up-container > form {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  max-width: 1440px;
+}
+
+#sign-up-container > form > section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: stretch;
+  flex-flow: row wrap;
+  gap: 25px;
+  width: 85%;
+  padding: 25px 7.5%;
+}
+
+#sign-up-container > form > section > h2 {
+  width: 100%;
+  font: var(--subTitleFontStyling);
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding-bottom: 25px;
+}
+
+/* user information section styling begins */
+
+#sign-up-container > form > #user-information-section > input {
+  flex: 0 0 calc(50% - 75px);
+  max-width: 100%;
+  padding: 10px 25px;
+  font: var(--bodyCopyFontStyling);
+  margin: 0px auto;
+  display: block;
+}
+#sign-up-container > form > section > hr {
+  width: 85%;
+  margin: 0px auto;
+  height: 1px;
+  background-color: var(--quaternaryColor);
+  border: none;
+}
+
+/* user information section styling ends. */
+
+/* user-status styling begins. */
+
+#sign-up-container > form > #user-status-section {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-status-section > input {
+  width: 0px;
+  opacity: 0px;
+  position: fixed;
+}
+
+#user-status-section > label {
+  flex: 0 2 calc(100% / 3);
+  max-width: 200px;
+  display: inline-block;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 5px 15px;
+  font: var(--bodyCopyFontStyling);
+  text-transform: uppercase;
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+}
+
+#user-status-section > label:hover {
+  background-color: var(--badgePrimary);
+  color: var(--badgeSecondary);
+}
+
+#user-status-section > input:focus + label {
+  background-color: var(--badgePrimary);
+  color: var(--badgeSecondary);
+}
+
+#user-status-section > input:checked + label {
+  background-color: var(--badgePrimary);
+  color: var(--badgeSecondary);
+}
+
+/* user-status styling ends. */
+
+/* user location section begins. */
+
+#sign-up-container > form > #user-location-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-location-section select {
+  padding: 5px 15px;
+  font: var(--bodyCopyFontStyling);
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  border: 1px solid var(--quaternaryColor);
+  border-radius: 5px;
+  width: calc(50% - 55px);
+  text-align: center;
+}
+
+#user-location-section input {
+  width: calc(50% - 55px);
+  font: var(--bodyCopyFontStyling);
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--quaternaryColor);
+  text-align: center;
+}
+
+/* user location section ends. */
+
+/* Stylization for the signUpForm.handlebars ends. */
+
+/* Stylization for recent post container begins. */
+
+#recent-post-container {
+  width: calc(100% - 150px);
+  margin: 0px auto;
+  padding: 50px 75px;
+  max-width: 1440px;
+}
+
+#recent-post-container > h2 {
+  font: var(--subTitleFontStyling);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+#recent-post-container > h3 {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+  padding: 25px 0px 12.5px 0px;
+}
+
+#recent-post-container > h4 {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+  font-weight: 600;
+  padding-bottom: 12.5px;
+}
+
+#recent-post-container > p {
+  width: 100%;
+  font: var(--bodyCopyFontStyling);
+}
+
+#recent-post-container > button {
+  margin: 0px auto;
+  display: block;
+  margin-top: 25px;
+  padding: 5px 15px;
+  background-color: var(--badgePrimary);
+  border: 2px solid var(--badgeSecondary);
+  border-radius: 5px;
+  color: white;
+  font: var(--buttonFontStyling);
+  transition: 250ms ease-in-out;
+}
+
+#recent-post-container > button:hover {
+  background-color: var(--badgeSecondary);
+  color: var(--badgePrimary);
+  transition: 250ms ease-in-out;
+  border: 2px solid var(--badgePrimary);
+}
+
+/* Stylization for recent post container ends. */
+
+/* Media queries begin. */
+
 @media screen and (max-width: 1000px) {
   header {
     display: flex;
@@ -395,6 +660,23 @@ footer > ul > li > a {
     justify-content: center;
     padding: 0px;
     display: flex;
+  }
+
+  #profile-container {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    gap: 25px;
+  }
+
+  #profile-container > img {
+    width: 250px;
+    margin: 0px auto;
   }
 }
 
@@ -444,7 +726,7 @@ footer > ul > li > a {
 
   nav.open {
     display: flex;
-    flex-flow: column-reverse wrap;
+    flex-flow: column-reverse nowrap;
     height: calc(100vh - 100px);
     gap: 25px;
   }
@@ -465,10 +747,15 @@ footer > ul > li > a {
     align-items: center;
     height: 100%;
     justify-content: center;
-    border-top: 1px solid var(--ternaryColor);
+    border-top: 1px solid var(--secondaryColor);
     width: 100%;
     padding: 0px;
     margin: 0px auto;
+    background-color: var(--ternaryColor);
+  }
+
+  nav.open > #navigation-links > a:hover {
+    background-color: var(--secondaryColor);
   }
 
   nav.open > #navigation-links > a:first-of-type {
@@ -479,10 +766,10 @@ footer > ul > li > a {
     width: 100%;
     height: auto;
     display: flex;
-    flex-flow: column-reverse wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     text-align: center;
-    gap: 25px;
+    padding-top: 100px;
   }
 
   nav.open > #navigation-account > a {
@@ -490,6 +777,11 @@ footer > ul > li > a {
     width: 100%;
     text-align: center;
     margin: 0px auto;
+    background-color: var(--ternaryColor);
+  }
+
+  nav.open > #navigation-account > a:hover {
+    background-color: var(--secondaryColor);
   }
 
   #navigation-account > input {
@@ -503,15 +795,28 @@ footer > ul > li > a {
   }
 
   #navigation-account > button {
-    width: 100px;
-    padding: 10px 0px;
+    width: 100%;
+    padding: 15px;
+    margin: 0px auto;
     text-align: center;
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-    position: absolute;
+    display: block;
+    background-color: var(--ternaryColor);
+    transition: 250ms ease-in-out;
+  }
+
+  #navigation-account > #searchSubmit {
+    width: 100px;
     border-radius: 0px 5px 5px 0px;
-    right: 2.5%;
-    top: auto;
+    margin-top: -39px;
+    padding: 9px 0px;
+    display: block;
+    margin-left: calc(97% - 100px);
+  }
+
+  #navigation-account > button:hover {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    transition: 250ms ease-in-out;
   }
 
   nav.closed {
@@ -520,3 +825,5 @@ footer > ul > li > a {
     display: none;
   }
 }
+
+/* Media queries end. */

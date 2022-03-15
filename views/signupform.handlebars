@@ -1,45 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <form>
-    <section>
-    <h2 class="formHeadings">User Information:</h2>    
-        {{!--First Name --}}
-        <label for="fname">First name:</label><br>
-            <input type="text" id="formFName" name="fname"><br>
-        {{!-- Last Name --}}
-        <label for="lname">Last name:</label><br>
-            <input type="text" id="formLName" name="lname"><br>
-        {{!-- email --}}
-        <label for="email">Email:</label><br>
-            <input type="email" id="formEmail"><br>
-        {{!-- password --}}
-        <label for="password">Password:</label><br>
-            <input type="password" id="formPassword"><br>
-    </section>
-
-    <section>
-    <h2 class="formHeadings">Status</h2>
-
-    <input type="radio" id="healthRadio" name="Health Status" value="healthy">
-        <label for="html">Healthy</label><br>
-    <input type="radio" id="healthRadio" name="Health Status" value="sick">
-        <label for="sick">Sick</label><br>
-    <input type="radio" id="healthRadio" name="Health Status" value="injured">
-        <label for="injured">Injured</label><br>
-    </section>
-      
-    <section>
-    <br>
-    <h2>Location:</h2>
-    <select id="country" name="country">
+<article id="sign-up-container">
+    <form id="sign-up-form">
+        <section id="user-information-section">
+        <h2>User Information //</h2>    
+            {{!--First Name --}}
+            <input type="text" id="formFName" name="fname" placeholder="FIRST NAME" required="required">
+            {{!-- Last Name --}}
+            <input type="text" id="formLName" name="lname" placeholder="LAST NAME" required="required">
+            <hr>
+            <input type="email" id="formEmail" placeholder="EMAIL ADDRESS" required="required">
+            {{!-- password --}}
+            <input type="password" id="formPassword" placeholder="PASSWORD" required="required">
+        </section>
+        <section id="user-status-section">
+            <h2>Status //</h2>
+            <input type="radio" class="healthRadio" id="healthy" name="Health Status" value="healthy">
+            <label for="healthy">Healthy</label><br>
+            <input type="radio" class="healthRadio" id="sick" name="Health Status" value="sick">
+            <label for="sick">Sick</label><br>
+            <input type="radio" class="healthRadio" id="injured" name="Health Status" value="injured">
+            <label for="injured">Injured</label><br>
+        </section>
+        <section id="user-location-section">
+            <h2>Location //</h2>
+            <select id="country" name="country" required="required">
         <option value="Afganistan">Afghanistan</option>
         <option value="Albania">Albania</option>
         <option value="Algeria">Algeria</option>
@@ -286,17 +269,10 @@
         <option value="Zaire">Zaire</option>
         <option value="Zambia">Zambia</option>
         <option value="Zimbabwe">Zimbabwe</option>
-    </select>
-    <br> 
-    <label for="password">Age:</label>
-            <input type="text" id="formAge">
-    <br>
-    <input type="submit" id="postFormSubmit" name="formSubmit" value="Submit">
-    </section>
-
+            </select> 
+            <input type="text" id="formAge" placeholder="AGE" required="required">
+        </section>
+        <input type="submit" id="postFormSubmit" name="formSubmit" value="Submit">
     </form>
-
+</article>
 <script src="/js/createProfile.js"></script>
-
-</body>
-</html>
