@@ -284,24 +284,6 @@ footer > ul > li > a {
 /* Stylization for the login.handlebars render ends. */
 
 /* Stylization for the userProfile.handlebars begins */
-/* #profile-header {
-  display: block;
-  margin-left: 20px;
-}
-
-#profile-left {
-  display: block;
-  margin-left: 20px;
-}
-
-#profile-left > img {
-  max-height: 300px;
-}
-
-#profile-right {
-  display: block;
-  margin-left: 20px;
-} */
 
 #profile-container {
   width: calc(100% - 300px);
@@ -311,7 +293,7 @@ footer > ul > li > a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: var(--ternaryColor);
+  background-color: var(--primaryColor);
 }
 
 #profile-container > img {
@@ -677,6 +659,16 @@ footer > ul > li > a {
   #profile-container > img {
     width: 250px;
     margin: 0px auto;
+  }
+
+  #profile-container > #profile-details {
+    width: 100%;
+    padding: 0px;
+  }
+
+  #profile-container > #profile-details > #health-status {
+    margin: 0px auto 15px;
+    display: block;
   }
 }
 
