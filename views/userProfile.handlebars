@@ -1,26 +1,14 @@
-<section id="profile-header">
-    <h2>
-        {{user.first_name}} {{user.last_name}}
-    </h2>
-</section>
-<article id="profile-container">
-    <section id="profile-left">
-        <img src="./images/profilePlaceholder.png" alt="placeholder for the profile icon.">
-        <br>
-        
-    </section>
-    <section id="profile-right">
-    
-        <h3 id="health_status">Status:{{user.health_status}}</h3>
-        <h3 id="location">Location:{{user.location}}</h3>
+<section id="profile-container">
+    <img src="./images/profilePlaceholder.png" alt="placeholder for the profile icon.">
+    <section id="profile-details">
+        <h2>{{user.first_name}} {{user.last_name}} // <span id="location">{{user.location}}</span></h2>
+        <h3 id="health-status">Status: {{user.health_status}}</h3>
         <p id="about-me">{{user.post.post_bio}}</p>
-        <br>
-    
-        <a href="/newPosting" class="profile-btn">Edit Profile</a>
     </section>
-</article>
-<section id="profile-active-post">
-    {{> specificPost}}
+    <section id="profile-active-post">
+        <a href="/newPosting" class="profile-btn">New Posting</a>
+        {{> specificPost}}
+    </section>
 </section>
 
 
